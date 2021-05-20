@@ -3,7 +3,6 @@
 function titleClickHandler(event){
   event.preventDefault();
   const clickedElement = this;
-  const articleSelector = clickedElement;
   console.log('Link was clicked!');
   console.log(event);
 
@@ -32,11 +31,15 @@ for(let activeArticle of activeArticles){
 
   /* [IN PROGRESS] get 'href' attribute from the clicked link */
 
-  articleSelector.getAttribute("href");
+  const href = clickedElement.getAttribute("href");
 
   /* find the correct article using the selector (value of 'href' attribute) */
 
+  const article = document.querySelector(href);
+
   /* add class 'active' to the correct article */
+
+  article.classList.add('active');
 }
 
 const links = document.querySelectorAll('.titles a');
