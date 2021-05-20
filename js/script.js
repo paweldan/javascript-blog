@@ -29,15 +29,15 @@ for(let activeArticle of activeArticles){
   activeArticle.classList.remove('active');
 }
 
-  /* [IN PROGRESS] get 'href' attribute from the clicked link */
+  /* [DONE] get 'href' attribute from the clicked link */
 
   const href = clickedElement.getAttribute("href");
 
-  /* find the correct article using the selector (value of 'href' attribute) */
+  /* [DONE] find the correct article using the selector (value of 'href' attribute) */
 
   const article = document.querySelector(href);
 
-  /* add class 'active' to the correct article */
+  /* [DONE] add class 'active' to the correct article */
 
   article.classList.add('active');
 }
