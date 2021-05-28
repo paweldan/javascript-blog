@@ -1,5 +1,35 @@
 'use strict';
 
+const optArticleSelector = '.post',
+  optTitleSelector = '.post-title',
+  optTitleListSelector = '.titles';
+
+function generateTitleLinks(){
+
+  /* remove contents of titleList */
+  const articlesListWrapper = document.querySelector(optTitleListSelector);
+  articlesListWrapper.innerHTML = '';
+
+  const articles = document.querySelectorAll(optArticleSelector);
+
+  /* for each article */
+  for(let article of articles){
+    /* get the article id */
+    const articleId = article.getAttribute('id');
+    /* find the title element */
+    const articleTitleElement = article.querySelector('.post-title');
+    /* get the title from the title element */
+    const articleTitle = articleTitleElement.innerHTML;
+    /* create HTML of the link */
+    const link = '<li><a href="#'+ articleId +'"><span>'+ articleTitle +'</span></a></li>';
+    /* insert link into titleList */
+    articlesListWrapper.innerHTML = articlesListWrapper.innerHTML + link;
+  }
+
+}
+
+generateTitleLinks();
+
 function titleClickHandler(event){
   event.preventDefault();
   const clickedElement = this;
