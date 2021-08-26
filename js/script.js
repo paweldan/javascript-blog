@@ -83,6 +83,8 @@ for(let link of links){
 }
 
 function generateTags(){
+  /* [NEW] create a new variable allTags with an empty array */
+  let allTags = [];
   /* find all articles */
  const articles = document.querySelectorAll('.post');
   /* START LOOP: for every article: */
